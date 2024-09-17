@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Falling Bats</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS file -->
+</head>
+<body>
+  <div class="bats"></div>
+
+  <script>
+    const batContainer = document.querySelector('.bats');
+
+    function createBat() {
+      const bat = document.createElement('div');
+      bat.classList.add('bat');
+      bat.innerText = '🦇'; // Bat emoji
+      bat.style.left = `${Math.random() * 100}vw`;
+      bat.style.top = `${Math.random() * 100}vh`;
+      bat.style.animationDuration = `${Math.random() * 2 + 1}s`;
+      batContainer.appendChild(bat);
+    }
+
+    // Create a number of bats
+    for (let i = 0; i < 50; i++) { // Adjust the number of bats as needed
+      createBat();
+    }
+  </script>
+</body>
+</html>
